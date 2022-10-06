@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Calculator">
+    tools:context=".Calculator"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <TextView
         android:id="@+id/firstNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="100dp"
-        android:text="First Number"
+        android:text="@string/first_number"
         app:layout_constraintBottom_toTopOf="@+id/txtFirstNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,20 +23,17 @@
         android:id="@+id/txtResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/textview"
         app:layout_constraintBaseline_toBaselineOf="@+id/lblResult"
-        app:layout_constraintEnd_toStartOf="@+id/btnMultiply"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/txtSecondNumber" />
 
     <TextView
         android:id="@+id/lblResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="32dp"
-        android:text="Result"
-        app:layout_constraintBottom_toTopOf="@+id/btnPlus"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/result"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSecondNumber" />
 
@@ -42,28 +41,32 @@
         android:id="@+id/secondNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="32dp"
-        android:text="Second Number"
+        android:text="@string/second_number"
         app:layout_constraintBottom_toTopOf="@+id/txtSecondNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFirstNumber" />
 
     <Button
-        android:id="@+id/btnMultiply"
+        android:id="@+id/btnPlus"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="*"
-        app:layout_constraintEnd_toStartOf="@+id/btnDivide"
+        android:layout_height="70dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/Plus"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnMinus"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnMinus"
-        app:layout_constraintTop_toTopOf="@+id/btnMinus" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblResult" />
 
     <Button
         android:id="@+id/btnDivide"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="/"
+        android:layout_height="70dp"
+        android:text="@string/Divide"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnMultiply"
@@ -72,43 +75,48 @@
     <Button
         android:id="@+id/btnMinus"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
+        android:layout_height="70dp"
+        android:text="@string/Minus"
+        android:textColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/btnMultiply"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnPlus"
-        app:layout_constraintTop_toTopOf="@+id/btnPlus" />
+        app:layout_constraintTop_toTopOf="@+id/btnPlus"
+        tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/btnPlus"
+        android:id="@+id/btnMultiply"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="+"
-        app:layout_constraintEnd_toStartOf="@+id/btnMinus"
+        android:layout_height="70dp"
+        android:text="@string/Multiply"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/btnDivide"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblResult" />
+        app:layout_constraintStart_toEndOf="@+id/btnMinus"
+        app:layout_constraintTop_toTopOf="@+id/btnMinus" />
 
     <EditText
         android:id="@+id/txtFirstNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="80dp"
         android:ems="10"
         android:inputType="number"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/secondNumber"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/firstNumber"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/txtSecondNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="80dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/lblResult"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/secondNumber"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
