@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MyLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/walmart_logo" />
+
+    <TextView
+        android:id="@+id/lblCreate"
+        android:layout_width="757dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/logo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="70dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/sign_in_to_your_account"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblCreate"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="64dp">
+
+        <LinearLayout
+            android:id="@+id/secLayout"
+            android:layout_width="match_parent"
+            android:layout_height="631dp"
+            android:orientation="vertical"
+            android:padding="64dp"
+            android:paddingStart="64dp"
+            android:paddingLeft="64dp"
+            android:paddingTop="64dp"
+            android:paddingEnd="64dp">
+
+            <TextView
+                android:id="@+id/lblRequired"
+                android:layout_width="245dp"
+                android:layout_height="35dp"
+                android:gravity="center|start"
+                android:text="@string/email_address_required"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtEmail"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:shadowColor="#8A8A8A"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/lblPass"
+                android:layout_width="245dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|start"
+                android:text="Password (Required)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:shadowColor="#8A8A8A"
+                android:textAlignment="textStart" />
+
+            <TextView
+                android:id="@+id/txtForgot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:minHeight="48dp"
+                android:text="@string/forgot_password"
+                android:textAlignment="textEnd" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="55dp" />
+
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal|center_vertical"
+                android:gravity="center|center_horizontal"
+                android:text="@string/sign_in" />
+
+            <TextView
+                android:id="@+id/displaytxt"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="@string/don_t_have_an_account"
+                android:textAlignment="center"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/create_an_account"
+                android:textColor="#027DC2"
+                android:theme="@style/Button.White" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
